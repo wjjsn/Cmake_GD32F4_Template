@@ -6,6 +6,7 @@ enable_language(C CXX ASM)
 
 add_executable(${CMAKE_PROJECT_NAME})
 add_subdirectory(Driver)
+add_subdirectory(rt-thread)
 target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     "Driver/CMSIS/GD/GD32F4xx/Source/GCC/startup_gd32f4xx.s"
     "Core/Src/main.c"
@@ -20,6 +21,7 @@ target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
 
 target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE
     GD32F4xx_SPL
+    rtthread_driver
 )
 
 # 创建自动配置的 launch.json
