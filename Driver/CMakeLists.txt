@@ -8,7 +8,7 @@ file(GLOB_RECURSE GD32F4xx_SPL_SRC
 )
 
 
-add_library(GD32F4xx_SPL STATIC
+add_library(GD32F4xx_SPL OBJECT
     ${GD32F4xx_SPL_SRC}
 )
 
