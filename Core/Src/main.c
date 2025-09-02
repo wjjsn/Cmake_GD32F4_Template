@@ -25,34 +25,34 @@ int main(void)
 	}
 }
 
-void rt_hw_us_delay(uint32_t us)
-{
-	uint32_t start, now, delta, reload, us_tick;
-	start	= SysTick->VAL;
-	reload	= SysTick->LOAD;
-	us_tick = SystemCoreClock / 1000000UL;
+// void rt_hw_us_delay(uint32_t us)
+// {
+// 	uint32_t start, now, delta, reload, us_tick;
+// 	start	= SysTick->VAL;
+// 	reload	= SysTick->LOAD;
+// 	us_tick = SystemCoreClock / 1000000UL;
 
-	do
-	{
-		now	  = SysTick->VAL;
-		delta = start > now ? start - now : reload + start - now;
-	} while (delta < us_tick * us);
-}
+// 	do
+// 	{
+// 		now	  = SysTick->VAL;
+// 		delta = start > now ? start - now : reload + start - now;
+// 	} while (delta < us_tick * us);
+// }
 
-void rt_hw_console_output(const char *str)
-{
-	extern void rt_enter_critical(void);
-	rt_enter_critical();
-	/*空实现*/
-	extern void rt_exit_critical(void);
-	rt_exit_critical();
-}
+// void rt_hw_console_output(const char *str)
+// {
+// 	extern void rt_enter_critical(void);
+// 	rt_enter_critical();
+// 	/*空实现*/
+// 	extern void rt_exit_critical(void);
+// 	rt_exit_critical();
+// }
 
-char rt_hw_console_getchar(void)
-{
-	/* Note: the initial value of ch must < 0 */
-	int ch = -1;
-	/*空实现*/
+// char rt_hw_console_getchar(void)
+// {
+// 	/* Note: the initial value of ch must < 0 */
+// 	int ch = -1;
+// 	/*空实现*/
 
-	return ch;
-}
+// 	return ch;
+// }

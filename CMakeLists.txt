@@ -21,7 +21,6 @@ target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
 
 target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE
     GD32F4xx_SPL
-    rtthread_driver
 )
 
 # 创建自动配置的 launch.json
